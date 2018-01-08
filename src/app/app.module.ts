@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 
+import {CalendarComponent} from 'ap-angular2-fullcalendar/src/calendar/calendar';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -15,7 +17,8 @@ import { AppRoutingModule, routedComponents } from './app-routing.module';
     ],
     declarations: [
         AppComponent,
-        routedComponents
+        routedComponents,
+        CalendarComponent
     ],
     providers: [
     ],
