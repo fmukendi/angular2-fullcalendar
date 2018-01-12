@@ -1,3 +1,32 @@
-<h1>Products</h1>
+<div style="padding-left: 25px">
 
-<angular2-fullcalendar [options]="calendarOptions"></angular2-fullcalendar>
+    <h1>Calendar</h1>
+
+    <button type="button" class="btn btn-warning" (click)="goPrev()">Prev</button>
+    <button type="button" class="btn btn-warning" (click)="goNext()">Next</button>
+    <button type="button" class="btn btn-primary" (click)="openModalWithComponent()">Create modal with component</button>
+    <button type="button" class="btn btn-primary" (click)="openModalMaterialDesginComponent()">Create modal Material Desgin with component</button>
+    
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-12 col-12 col-md-4 form-group">
+              <input type="text"
+                     class="form-control"
+                     [minDate]="minDate"
+                     [maxDate]="maxDate"
+                     #dp="bsDatepicker"
+                     bsDatepicker [(ngModel)]="bsValue"
+                     (ngModelChange)="setNewDate()"
+                     >
+            </div>
+            <div class="col-xs-12 col-12 col-md-3 form-group">
+              <button class="btn btn-success" (click)="dp.toggle()">Date Picker</button>
+            </div>
+          </div>
+          <br>
+    </div>
+    
+    <angular2-fullcalendar [options]="calendarOptions"></angular2-fullcalendar>
+
+    
+</div>
