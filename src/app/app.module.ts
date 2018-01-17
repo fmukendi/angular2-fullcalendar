@@ -18,7 +18,7 @@ import { ModalMaterialDesignComponent } from './products/modal-material-design/m
 import {MatDialogModule , MatButtonModule} from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
-
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
     imports: [
@@ -33,7 +33,8 @@ import { MatInputModule } from '@angular/material';
         MatDialogModule,
         MatButtonModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatCardModule
     ],
     entryComponents : [
         ModalProductComponent,

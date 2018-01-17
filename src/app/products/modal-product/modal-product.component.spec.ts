@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { ModalProductComponent } from './modal-product.component';
 
 describe('ModalProductComponent', () => {
@@ -8,7 +8,13 @@ describe('ModalProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalProductComponent ]
+      declarations: [ ModalProductComponent ],
+      providers: [
+           BsModalRef
+      ],
+      imports: [
+      ]
+
     })
     .compileComponents();
   }));
