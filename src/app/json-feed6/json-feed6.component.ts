@@ -1,5 +1,6 @@
 import { ServJsonFeed6Service } from './../services/serv-json-feed6/serv-json-feed6.service';
 import { Component, OnInit } from '@angular/core';
+// import { Options } from 'fullcalendar';
 
 @Component({
   selector: 'app-json-feed6',
@@ -11,6 +12,7 @@ export class JsonFeed6Component implements OnInit {
   private url: String = './api/events/events1.json';
   private url2: String = '../../api/events/events1.json';
   calendarOptions: Object;
+  // calendarOptions: Options; // needed for intellisense
 
   constructor(private _serv: ServJsonFeed6Service) { }
 

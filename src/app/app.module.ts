@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { MomentModule } from 'angular2-moment/moment.module';
 import {CalendarComponent} from 'ap-angular2-fullcalendar/src/calendar/calendar';
+import { FullCalendarModule } from 'ng-fullcalendar';
+
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -48,7 +50,8 @@ import { EventInteractComponent } from './event-interact/event-interact.componen
         MatInputModule,
         MatCardModule,
         MomentModule ,
-        HttpClientModule
+        HttpClientModule,
+        // FullCalendarModule --> not working with this...  // https://www.npmjs.com/package/ng-fullcalendar
     ],
     entryComponents : [
         ModalProductComponent,
