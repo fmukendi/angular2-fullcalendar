@@ -1,13 +1,12 @@
-
 import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
-  selector: 'app-event-interact',
-  templateUrl: './event-interact.component.html',
-  styleUrls: ['./event-interact.component.css']
+  selector: 'app-modify-events',
+  templateUrl: './modify-events.component.html',
+  styleUrls: ['./modify-events.component.css']
 })
-export class EventInteractComponent implements OnInit, AfterViewInit {
+export class ModifyEventsComponent implements OnInit {
 
   @ViewChild(CalendarComponent) myCalendar: CalendarComponent;
 
@@ -56,11 +55,29 @@ export class EventInteractComponent implements OnInit, AfterViewInit {
         // Whatever happens, unselect selection
         that.fullCalendarRenderEvent(event);
 
-      } // End select callback
+      }, // End select callback
+
+      // Make events editable, globally
+      editable: true,
+
+      // Callback triggered when we click on an event
+
+      eventClick: function (event, jsEvent, view) {
+        // Ask for a title. If empty it will default to 'New event'
+        const newTitle = prompt('Enter a new title for this event', event.title);
+
+        // If did not pressed Cancel button
+        if (newTitle != null) {
+          // Update event
+          event.title = newTitle.trim() !== '' ? newTitle : event.title;
+
+          // Call the 'updateEvent' method
+          that.fullCalendarUpdate(event);
+
+        }
+      } // End callback eventClick
     }; // End of calendar options
   }
-
-  ngAfterViewInit() { }
 
   public fullCalendarRenderEvent = (event: any): void => {
     this.myCalendar.fullCalendar('renderEvent', event, true);
@@ -69,4 +86,9 @@ export class EventInteractComponent implements OnInit, AfterViewInit {
   public fullCalendarUnselect = (): void => {
     this.myCalendar.fullCalendar('unselect');
   }
+
+  public fullCalendarUpdate = (event: any): void => {
+    this.myCalendar.fullCalendar('updateEvent', event);
+  }
+
 }

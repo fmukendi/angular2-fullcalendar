@@ -33,6 +33,7 @@ import { LocalTimePipe } from 'angular2-moment/local.pipe';
 import { JsonFeed6Component } from './json-feed6/json-feed6.component';
 import { SelectDateTimeComponent } from './select-date-time/select-date-time.component';
 import { EventInteractComponent } from './event-interact/event-interact.component';
+import { ModifyEventsComponent } from './modify-events/modify-events.component';
 
 @NgModule({
     imports: [
@@ -70,7 +71,8 @@ import { EventInteractComponent } from './event-interact/event-interact.componen
         ManagingEvents5Component,
         JsonFeed6Component,
         SelectDateTimeComponent,
-        EventInteractComponent
+        EventInteractComponent,
+        ModifyEventsComponent
     ],
     providers: [
         DateFormatPipe,

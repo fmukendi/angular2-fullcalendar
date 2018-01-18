@@ -11,6 +11,7 @@ import { NavigationsButtons2Component } from './navigations-buttons2/navigations
 import { ManagingEvents5Component } from './managing-events5/managing-events5.component';
 import { JsonFeed6Component } from './json-feed6/json-feed6.component';
 import { EventInteractComponent } from './event-interact/event-interact.component';
+import { ModifyEventsComponent } from './modify-events/modify-events.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', component: HomeComponent },
@@ -49,6 +50,10 @@ const routes: Routes = [
     {
         path: 'eventInteract',
         component: EventInteractComponent
+    },
+    {
+        path: 'modifyEvents',
+        component: ModifyEventsComponent
     },
 
     // otherwise redirect to home
