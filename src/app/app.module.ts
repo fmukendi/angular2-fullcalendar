@@ -24,6 +24,8 @@ import { NavigationsButtons2Component } from './navigations-buttons2/navigations
 import { ShowOrHideDays3Component } from './show-or-hide-days3/show-or-hide-days3.component';
 import { DisplayImages4Component } from './display-images4/display-images4.component';
 import { ManagingEvents5Component } from './managing-events5/managing-events5.component';
+import { DateFormatPipe } from 'angular2-moment/date-format.pipe';
+import { LocalTimePipe } from 'angular2-moment/local.pipe';
 
 @NgModule({
     imports: [
@@ -59,7 +61,8 @@ import { ManagingEvents5Component } from './managing-events5/managing-events5.co
         ManagingEvents5Component
     ],
     providers: [
-
+        DateFormatPipe,
+        LocalTimePipe
     ],
     bootstrap: [AppComponent]
 })
