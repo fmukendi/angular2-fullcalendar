@@ -20,7 +20,7 @@ import { ModalMaterialDesignComponent } from './products/modal-material-design/m
 import {MatDialogModule , MatButtonModule} from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { BasicFullCalendar1Component } from './basic-full-calendar1/basic-full-calendar1.component';
 import { NavigationsButtons2Component } from './navigations-buttons2/navigations-buttons2.component';
 import { ShowOrHideDays3Component } from './show-or-hide-days3/show-or-hide-days3.component';
@@ -29,6 +29,8 @@ import { ManagingEvents5Component } from './managing-events5/managing-events5.co
 import { DateFormatPipe } from 'angular2-moment/date-format.pipe';
 import { LocalTimePipe } from 'angular2-moment/local.pipe';
 import { JsonFeed6Component } from './json-feed6/json-feed6.component';
+import { SelectDateTimeComponent } from './select-date-time/select-date-time.component';
+import { EventInteractComponent } from './event-interact/event-interact.component';
 
 @NgModule({
     imports: [
@@ -63,7 +65,9 @@ import { JsonFeed6Component } from './json-feed6/json-feed6.component';
         ShowOrHideDays3Component,
         DisplayImages4Component,
         ManagingEvents5Component,
-        JsonFeed6Component
+        JsonFeed6Component,
+        SelectDateTimeComponent,
+        EventInteractComponent
     ],
     providers: [
         DateFormatPipe,
