@@ -8,6 +8,7 @@ import { ProductListComponent } from './products/index';
 import { BasicFullCalendar1Component } from './basic-full-calendar1/basic-full-calendar1.component';
 import { NavigationsButtons2Component } from './navigations-buttons2/navigations-buttons2.component';
 import { ManagingEvents5Component } from './managing-events5/managing-events5.component';
+import { JsonFeed6Component } from './json-feed6/json-feed6.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', component: HomeComponent },
@@ -34,6 +35,10 @@ const routes: Routes = [
     {
         path: 'managingEvents5',
         component: ManagingEvents5Component
+    },
+    {
+        path: 'jsonFeed6',
+        component: JsonFeed6Component
     },
 
     // otherwise redirect to home

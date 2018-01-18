@@ -1,7 +1,9 @@
+import { ServJsonFeed6Service } from './services/serv-json-feed6/serv-json-feed6.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
@@ -26,6 +28,7 @@ import { DisplayImages4Component } from './display-images4/display-images4.compo
 import { ManagingEvents5Component } from './managing-events5/managing-events5.component';
 import { DateFormatPipe } from 'angular2-moment/date-format.pipe';
 import { LocalTimePipe } from 'angular2-moment/local.pipe';
+import { JsonFeed6Component } from './json-feed6/json-feed6.component';
 
 @NgModule({
     imports: [
@@ -42,7 +45,8 @@ import { LocalTimePipe } from 'angular2-moment/local.pipe';
         MatFormFieldModule,
         MatInputModule,
         MatCardModule,
-        MomentModule
+        MomentModule ,
+        HttpClientModule
     ],
     entryComponents : [
         ModalProductComponent,
@@ -58,11 +62,13 @@ import { LocalTimePipe } from 'angular2-moment/local.pipe';
         NavigationsButtons2Component,
         ShowOrHideDays3Component,
         DisplayImages4Component,
-        ManagingEvents5Component
+        ManagingEvents5Component,
+        JsonFeed6Component
     ],
     providers: [
         DateFormatPipe,
-        LocalTimePipe
+        LocalTimePipe ,
+        ServJsonFeed6Service
     ],
     bootstrap: [AppComponent]
 })
