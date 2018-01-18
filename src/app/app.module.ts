@@ -19,6 +19,10 @@ import {MatDialogModule , MatButtonModule} from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
+import { BasicFullCalendar1Component } from './basic-full-calendar1/basic-full-calendar1.component';
+import { NavigationsButtons2Component } from './navigations-buttons2/navigations-buttons2.component';
+import { ShowOrHideDays3Component } from './show-or-hide-days3/show-or-hide-days3.component';
+import { DisplayImages4Component } from './display-images4/display-images4.component';
 
 @NgModule({
     imports: [
@@ -45,7 +49,11 @@ import {MatCardModule} from '@angular/material/card';
         routedComponents,
         CalendarComponent,
         ModalProductComponent,
-        ModalMaterialDesignComponent
+        ModalMaterialDesignComponent,
+        BasicFullCalendar1Component,
+        NavigationsButtons2Component,
+        ShowOrHideDays3Component,
+        DisplayImages4Component
     ],
     providers: [
 
