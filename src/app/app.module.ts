@@ -23,6 +23,7 @@ import { BasicFullCalendar1Component } from './basic-full-calendar1/basic-full-c
 import { NavigationsButtons2Component } from './navigations-buttons2/navigations-buttons2.component';
 import { ShowOrHideDays3Component } from './show-or-hide-days3/show-or-hide-days3.component';
 import { DisplayImages4Component } from './display-images4/display-images4.component';
+import { ManagingEvents5Component } from './managing-events5/managing-events5.component';
 
 @NgModule({
     imports: [
@@ -53,7 +54,8 @@ import { DisplayImages4Component } from './display-images4/display-images4.compo
         BasicFullCalendar1Component,
         NavigationsButtons2Component,
         ShowOrHideDays3Component,
-        DisplayImages4Component
+        DisplayImages4Component,
+        ManagingEvents5Component
     ],
     providers: [
 
