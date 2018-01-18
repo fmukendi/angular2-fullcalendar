@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
-
+import { MomentModule } from 'angular2-moment/moment.module';
 import {CalendarComponent} from 'ap-angular2-fullcalendar/src/calendar/calendar';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
@@ -39,7 +39,8 @@ import { ManagingEvents5Component } from './managing-events5/managing-events5.co
         MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
-        MatCardModule
+        MatCardModule,
+        MomentModule
     ],
     entryComponents : [
         ModalProductComponent,
