@@ -34,6 +34,12 @@ import { JsonFeed6Component } from './json-feed6/json-feed6.component';
 import { SelectDateTimeComponent } from './select-date-time/select-date-time.component';
 import { EventInteractComponent } from './event-interact/event-interact.component';
 import { ModifyEventsComponent } from './modify-events/modify-events.component';
+import { RemovingEventsComponent } from './removing-events/removing-events.component';
+
+import { JQ_TOKEN
+       } from './common/index';
+
+declare let jQuery: Object;
 
 @NgModule({
     imports: [
@@ -72,12 +78,14 @@ import { ModifyEventsComponent } from './modify-events/modify-events.component';
         JsonFeed6Component,
         SelectDateTimeComponent,
         EventInteractComponent,
-        ModifyEventsComponent
+        ModifyEventsComponent,
+        RemovingEventsComponent
     ],
     providers: [
         DateFormatPipe,
         LocalTimePipe ,
-        ServJsonFeed6Service
+        ServJsonFeed6Service,
+       // { provide: JQ_TOKEN, useValue: jQuery }
     ],
     bootstrap: [AppComponent]
 })

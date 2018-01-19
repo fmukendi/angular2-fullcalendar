@@ -1,3 +1,4 @@
+import { RemovingEventsComponent } from './removing-events/removing-events.component';
 import { SelectDateTimeComponent } from './select-date-time/select-date-time.component';
 import { DisplayImages4Component } from './display-images4/display-images4.component';
 import { ShowOrHideDays3Component } from './show-or-hide-days3/show-or-hide-days3.component';
@@ -54,6 +55,10 @@ const routes: Routes = [
     {
         path: 'modifyEvents',
         component: ModifyEventsComponent
+    },
+    {
+        path: 'removingEvents',
+        component: RemovingEventsComponent
     },
 
     // otherwise redirect to home
