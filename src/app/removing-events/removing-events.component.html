@@ -2,8 +2,11 @@
   removing-events works!
 </p>
 
+<div (click)='test()'>click sample</div>
+
 <angular2-fullcalendar 
   #ucCalendar
   [options]="calendarOptions" 
+  (eventClick)="eventClick($event.detail)"
   >
 </angular2-fullcalendar>

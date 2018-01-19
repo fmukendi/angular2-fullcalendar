@@ -1,30 +1,34 @@
 import { ComponentFixture } from '@angular/core/testing';
 import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
-import { Component,
-         OnInit,
-         ViewChild,
-         AfterViewInit,
-         ElementRef,
-         Renderer,
-         Inject
-      } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+  ElementRef,
+  Renderer,
+  Renderer2,
+  Inject
+} from '@angular/core';
 // import { JQ_TOKEN } from '../common/jQuery.service';
+declare var $: JQueryStatic;
 
 @Component({
   selector: 'app-removing-events',
   templateUrl: './removing-events.component.html',
   styleUrls: ['./removing-events.component.css']
 })
-export class RemovingEventsComponent implements OnInit {
+export class RemovingEventsComponent implements OnInit, AfterViewInit {
 
   @ViewChild(CalendarComponent) myCalendar: CalendarComponent;
 
   calendarOptions: Object;
 
   constructor(private element: ElementRef,
-             private renderer: Renderer,
-             // @Inject(JQ_TOKEN) private $: any
-            ) { }
+    private renderer: Renderer,
+    private renderer2: Renderer2,
+    // @Inject(JQ_TOKEN) private $: any
+  ) { }
 
   ngOnInit() {
     const that = this;
@@ -93,14 +97,27 @@ export class RemovingEventsComponent implements OnInit {
       eventRender: function (event, element) {
         // that.renderer.invokeElementMethod
 
-        this.$(element).find('.fc-content')
+        $(element).find('.fc-content')
           .append(
             "<div style='float:right'><a class='delete-link' href='javascript:remove_event(\""
           + event._id + "\")'>Delete</a></div>"
         );
 
+        /* $(element).find('.fc-content')
+          .append(
+            "<ng-content style='float:right'><a class='delete-link' (click)='remove_event(\""+ event._id + "\")'>Delete</a></ng-content>"
+        ); */
+
+        /* const d1 = that.element.nativeElement.querySelector('.fc-content');
+        const str = "<div style='float:right'><a class='delete-link' (click)='remove_event(\"" + event._id + "\")'>Delete</a></div>";
+        d1.nativeElement.insertAdjacentHTML('beforeend', str); */
+
+
       }, // End callback eventRender
     }; // End of calendar options
+  }
+
+  ngAfterViewInit() {
   }
 
   public fullCalendarRenderEvent = (event: any): void => {
@@ -113,6 +130,17 @@ export class RemovingEventsComponent implements OnInit {
 
   public fullCalendarUpdate = (event: any): void => {
     this.myCalendar.fullCalendar('updateEvent', event);
+  }
+
+  public remove_event = (eventID: any): void => {
+    const remove = confirm('Remove event ID' + eventID + '?');
+    if (remove === true) {
+      this.myCalendar.fullCalendar('removeEvents', eventID);
+    }
+  }
+
+  public test = (): void => {
+    alert('only testing');
   }
 
 }
